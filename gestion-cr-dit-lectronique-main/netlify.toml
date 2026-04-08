@@ -1,0 +1,17 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "20"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[context.production.environment]
+VITE_API_URL = "https://your-render-backend-url.onrender.com"
+
+[context.development.environment]
+VITE_API_URL = "http://localhost:8000"
